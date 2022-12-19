@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.min.js"></script>
+</head>
+
+<body>
+    <script>
+        let canvas;
+
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+
+        function setup() {
+           canvas = createCanvas(windowWidth, windowHeight);
+           canvas.position(0,0); 
+           background('pink');
+
+        }
+        function draw() {
+            console.log(random(1920));
+            triangle(random(1920), random(1920), random(900), random(300), random(1920), random(500), random(600));
+        }
+    </script>
+</body>
+
+</html>
