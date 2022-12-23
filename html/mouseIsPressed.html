@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+ * Mouse Press. 
+ * 
+ * Move the mouse to position the shape. 
+ * Press the mouse button to invert the color. 
+ */
+
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  noSmooth();
+  fill(126);
+  background(0);
+}
+
+function draw() {
+  if (mouseIsPressed) {
+    stroke(255);
+  } else {
+    stroke(220, 20, 60);
+  }
+  line(mouseX-66, mouseY, mouseX+66, mouseY);
+  line(mouseX, mouseY-66, mouseX, mouseY+66); 
+}
+    </script>
+</body>
+</html>
