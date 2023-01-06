@@ -1,7 +1,7 @@
-const fontSize = 25,
+const fontSize = 44,
  scaleRate = 6, 
- msg1 = 'DAEGU ART MUSEUM'
- inpactRange = 250;
+ msg1 = 'DAEGU ART MUSEUM',
+ inpactRange = fontSize*scaleRate/1;
 let canvas;
 let textData = [];
 let dotsCordinate = [];
@@ -33,7 +33,7 @@ class Particle {
     }
 
     update() {
-        let distanceFromMouse = Math.sqrt((this.x - mouseX) ** 2 + (this.y - mouseY) ** 2);
+        let distanceFromMouse = Math.sqrt((this.x - mouseX) ** 1 + (this.y - mouseY) ** 2);
         let distanceToOrigin = Math.sqrt((this.originalX - this.x) ** 2 + (this.originalY - this.y) ** 2);
 
         if (distanceFromMouse < inpactRange) {
@@ -63,7 +63,7 @@ class Particle {
 
 function preload(){
 
-    lato = loadFont('../fonts/Lato-Black.ttf')
+    lato = loadFont('../fonts/ENGINE.ttf')
 }
 
 // function preload() {
@@ -76,7 +76,7 @@ function windowResized() {
 }
 
 function setup() {
-    frameRate(30);
+    frameRate(200);
     canvas = createCanvas(window.innerWidth, window.innerHeight);
     colorMode(HSL)
     noStroke();
@@ -158,4 +158,7 @@ function updating() {
     particles.forEach(p => {
         p.update();
     })
+}
+function mousePressed(){
+    background(random(250), random(255), random(255));
 }
